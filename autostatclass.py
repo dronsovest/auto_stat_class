@@ -8,7 +8,7 @@ def format_players(players_count):
         return 'игрок'
     elif 2 <= players_count <= 4:
         return 'игрока'
-    elif players_count >= 5:
+    else:
         return 'игроков'
 
 
