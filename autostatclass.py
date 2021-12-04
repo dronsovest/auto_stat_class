@@ -22,10 +22,10 @@ todos = json.loads(response.text)
 
 zones = todos['zones']
 main = zones['MAIN']
-statsMain = main['stats']
-classesMain = statsMain['classes']
+stats_main = main['stats']
+classes_main = stats_main['classes']
 
-for i in classesMain:
+for i in classes_main:
     if i['name'] == 'Класс F':
         result += 'Класс F \n'
     else:
