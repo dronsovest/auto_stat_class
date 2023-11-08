@@ -1,6 +1,7 @@
-import requests
-import json
 import datetime
+import json
+import pyperclip
+import requests
 
 
 def format_players(players_count):
@@ -36,3 +37,4 @@ result += ('\n[color=red][size=9]Класс F скрыт, так как данн
            '\nТуда попадают все, кто сыграл 20 партий по переписке.[/size]'
            '[/color]')
 print (result)
+pyperclip.copy(result)
