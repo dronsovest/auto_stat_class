@@ -2,6 +2,7 @@ import datetime
 import json
 import pyperclip
 import requests
+import tkinter as tk
 
 
 def format_players(players_count):
@@ -36,5 +37,17 @@ for i in classes_main:
 result += ('\n[color=red][size=9]Класс F скрыт, так как данные неинформативны.'
            '\nТуда попадают все, кто сыграл 20 партий по переписке.[/size]'
            '[/color]')
+
 print (result)
 pyperclip.copy(result)
+
+window = tk.Tk()
+label = tk.Label(
+    text=result,
+    width=70,
+    height=20,
+)
+label.pack()
+button = tk.Button(master=window, text="Скопировать в буфер обмена")
+button.pack()
+window.mainloop()
