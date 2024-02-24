@@ -38,16 +38,27 @@ result += ('\n[color=red][size=9]Класс F скрыт, так как данн
            '\nТуда попадают все, кто сыграл 20 партий по переписке.[/size]'
            '[/color]')
 
-print (result)
-pyperclip.copy(result)
+result_gui = result.replace('[b]', '').replace('[/b]', '').replace('[u]' , '').replace('[/u]', '')
 
 window = tk.Tk()
+window.title('Chotcher 1.0')
+window.geometry('600x500+650+300')
 label = tk.Label(
-    text=result,
+    text=result_gui,
     width=70,
     height=20,
 )
 label.pack()
-button = tk.Button(master=window, text="Скопировать в буфер обмена")
+button = tk.Button(
+    master=window, 
+    text='Скопировать в буфер обмена',
+    command=pyperclip.copy(result),
+    )
 button.pack()
+button2 = tk.Button(
+    master=window, 
+    text='Закрыть',
+    command=window.destroy,
+    )
+button2.pack()
 window.mainloop()
